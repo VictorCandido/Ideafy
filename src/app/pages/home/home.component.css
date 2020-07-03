@@ -1,0 +1,59 @@
+h1 {
+    color: #ffffff;
+}
+.container {
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+}
+.container .header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.container > .card {
+  cursor: pointer;
+    margin: 10px 0;
+    display: grid;
+    grid-template-areas:
+        'title'
+        'body';
+}
+.container > .card > .card-title {
+    grid-area: title;
+    display: flex;
+    justify-content: center;
+}
+.container > .card > .card-title > span {
+    font-size: 27px;
+}
+.container > .card > .card-body {
+  margin-top: 10px;
+    grid-area: body;
+    display: grid;
+    grid-template-areas:
+        'description logo';
+}
+.container > .card > .card-body > .description {
+    grid-area: description;
+    display: flex;
+    align-items: center;
+    margin: 0 15px;
+}
+.container > .card > .card-body > .description > p {
+    font-size: 18px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+.container > .card > .card-body > .logo {
+    grid-area: logo;
+}
+.container > .card > .card-body > .logo > img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+}

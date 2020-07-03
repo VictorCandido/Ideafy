@@ -12,6 +12,8 @@ html, body, app-root {
 }
 body {
     font-family: 'Roboto', sans-serif;
-    background: #F9F9F9;
+    background: #303030 !important;
     -webkit-font-smoothing: antialiased !important;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif !important; }

@@ -1,4 +1,25 @@
-<app-header></app-header>
+<div class="container">
+    <div class="header">
+        <h1>Adicione ideias e tire-as do papel!</h1>
 
+        <button mat-fab color="primary">
+            <fa-icon [icon]="faPlus"></fa-icon>
+        </button>
+    </div>
 
-<p>home works!</p>
+    <mat-card color="primary" class="card" *ngFor="let register of registers">
+        <div class="card-title">
+            <span class="title">{{ register.title }}</span>
+        </div>
+
+        <div class="card-body">
+            <div class="description">
+                <p>{{ register.description }}</p>
+            </div>
+
+            <div class="logo">
+                <img [src]="register.logo">
+            </div>
+        </div>
+    </mat-card>
+</div>
