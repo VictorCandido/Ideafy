@@ -1,0 +1,44 @@
+p, h1, label {
+  color: #FFFFFF;
+}
+.container .title {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.container .title h1 {
+  font-size: 40px;
+}
+.container .form {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+.container .form .logo img {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+}
+.container .form .idea-description {
+  margin-left: 40px;
+  width: 100%;
+  height: 100%;
+}
+.container .form .idea-description mat-form-field {
+  width: 100%;
+  height: 150px;
+}
+.container .form .idea-description mat-form-field textarea {
+  height: 120px;
+}
+.container .to-do-list {
+  margin-top: 20px;
+}
+.container .to-do-list .title h1 {
+  font-size: 30px;
+  font-weight: bold;
+}
+.container .to-do-list .lists-area {
+  width: 100%;
+  min-height: 300px;
+}

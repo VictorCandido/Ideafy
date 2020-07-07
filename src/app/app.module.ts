@@ -1,3 +1,4 @@
+import { IdeiasModule } from './pages/ideias/ideias.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -9,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { HomeModule } from './pages/home/home.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,10 +19,12 @@ import { HomeModule } from './pages/home/home.module';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
     HomeModule,
+    IdeiasModule,
     MatToolbarModule
   ],
   providers: [],

@@ -1,12 +1,6 @@
 h1 {
     color: #ffffff;
 }
-.container {
-    margin: 20px auto;
-    display: flex;
-    flex-direction: column;
-    max-width: 70%;
-}
 .container .header {
     display: flex;
     align-items: flex-end;
@@ -15,11 +9,14 @@ h1 {
 }
 .container > .card {
   cursor: pointer;
-    margin: 10px 0;
-    display: grid;
-    grid-template-areas:
-        'title'
-        'body';
+  margin: 10px 0;
+  display: grid;
+  grid-template-areas:
+      'title'
+      'body';
+}
+.container > .card:hover {
+  background-color: #555555;
 }
 .container > .card > .card-title {
     grid-area: title;
