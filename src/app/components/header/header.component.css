@@ -1,29 +1,36 @@
 .toolbar {
-    padding: 0 30px;
-    height: 80px;
+    height: 8rem;
     color: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(60, 0, 104, 0.25);
+}
+.toolbar .container {
+  width: 100%;
+}
+.toolbar .container .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.toolbar .container .content .logo img {
+  width: 14rem;
+}
+.toolbar .container .content .userData {
     display: flex;
     align-items: center;
-    justify-content: space-between;
 }
-.userData {
-    display: flex;
-    align-items: center;
-}
-.userData .downArrow {
+.toolbar .container .content .userData .downArrow {
     width: 15px;
     color: #FFFFFF;
 }
-.userData .userName {
+.toolbar .container .content .userData .userName {
     font-weight: bold;
-    line-height: 20px;
-    font-size: 16px;
+    line-height: 2.0rem;
+    font-size: 1.6rem;
     margin: 0 15px;
 }
-.userData .perfilImage {
-    width: 50px;
-    height: 50px;
+.toolbar .container .content .userData .perfilImage {
+    width: 5rem;
+    height: 5rem;
     background-color: #FFFFFF;
     border-radius: 30px;
 }

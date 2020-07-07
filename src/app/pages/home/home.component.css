@@ -7,6 +7,16 @@ h1 {
     justify-content: space-between;
     margin-bottom: 10px;
 }
+.container .header button {
+  width: 5.6rem;
+  height: 5.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .header button fa-icon {
+  font-size: 1.4rem;
+}
 .container > .card {
   cursor: pointer;
   margin: 10px 0;
@@ -24,14 +34,14 @@ h1 {
     justify-content: center;
 }
 .container > .card > .card-title > span {
-    font-size: 27px;
+    font-size: 2.7rem;
 }
 .container > .card > .card-body {
   margin-top: 10px;
-    grid-area: body;
-    display: grid;
-    grid-template-areas:
-        'description logo';
+  grid-area: body;
+  display: grid;
+  grid-template-areas:
+      'description logo';
 }
 .container > .card > .card-body > .description {
     grid-area: description;
@@ -40,7 +50,7 @@ h1 {
     margin: 0 15px;
 }
 .container > .card > .card-body > .description > p {
-    font-size: 18px;
+    font-size: 1.8rem;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 4;
@@ -50,7 +60,18 @@ h1 {
     grid-area: logo;
 }
 .container > .card > .card-body > .logo > img {
-    width: 150px;
-    height: 150px;
+    width: 15rem;
+    height: 15rem;
     border-radius: 10px;
+}
+@media (max-width: 630px) {
+  .container .card .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .container .card .card-body .logo {
+    order: -1;
+    margin: 10px 0;
+  }
 }

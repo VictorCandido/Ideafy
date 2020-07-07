@@ -1,10 +1,14 @@
 <mat-toolbar class="toolbar" color="primary">
-    <div class="logo">
-        <a routerLink="/home"><img src="/assets/Ideafy-logo.svg" alt="Logo"></a>
+  <div class="container">
+    <div class="content">
+      <div class="logo">
+          <a routerLink="/home"><img src="/assets/Ideafy-logo.svg" alt="Logo"></a>
+      </div>
+      <div class="userData">
+          <fa-icon [icon]="faAngleDown"></fa-icon>
+          <p class="userName">Víctor Cândido</p>
+          <div class="perfilImage"></div>
+      </div>
     </div>
-    <div class="userData">
-        <fa-icon [icon]="faAngleDown"></fa-icon>
-        <p class="userName">Víctor Cândido</p>
-        <div class="perfilImage"></div>
-    </div>
+  </div>
 </mat-toolbar>
