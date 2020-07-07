@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="title">
+    <h1 id="title" *ngIf="!isEditingTitle" (click)="editTitle()" >{{ ideaTitle }}</h1>
+    <input id="editTitle" [(ngModel)]="ideaTitle" [hidden]="!isEditingTitle" (blur)="saveTitle()" value="Titulo da Ideia"/>
+  </div>
+
+  <div class="form">
+    <div class="logo">
+      <img src="https://api.adorable.io/avatars/285/abott@adorable.png">
+    </div>
+
+    <div class="idea-description">
+      <mat-form-field appearance="fill">
+        <mat-label>Descrição</mat-label>
+        <textarea matInput></textarea>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="to-do-list">
+    <div class="title">
+      <h1>TO DO LIST</h1>
+    </div>
+
+    <mat-card color="primary" class="lists-area">
+      <div class="list">
+        <div class="header">
+          <div class="title">
+            <fa-icon [icon]="check"></fa-icon>
+            <p>List 1</p>
+          </div>
+
+          <div class="options">
+            <button mat-raised-button> Ocultar itens concluídos </button>
+            <button mat-raised-button> Remover </button>
+          </div>
+        </div>
+
+        <div class="list-progress">
+          <p>10%</p>
+          <mat-progress-bar mode="determinate" value="10"></mat-progress-bar>
+        </div>
+
+        <div class="list-content">
+          <ul>
+            <li><mat-checkbox color="primary"> Item 1 </mat-checkbox></li>
+            <li><mat-checkbox class="subitem" color="primary"> Item 2 </mat-checkbox></li>
+            <li><mat-checkbox color="primary"> Item 3 </mat-checkbox></li>
+          </ul>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>
