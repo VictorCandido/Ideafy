@@ -1,7 +1,7 @@
 p, h1, label {
   color: #FFFFFF;
 }
-.container .title {
+.container > .title {
   display: flex;
   justify-content: center;
   margin-top: 20px;
@@ -30,6 +30,7 @@ p, h1, label {
 }
 .container .form .idea-description mat-form-field textarea {
   height: 120px;
+  color: #FFFFFF;
 }
 .container .to-do-list {
   margin-top: 20px;
@@ -37,8 +38,51 @@ p, h1, label {
 .container .to-do-list .title h1 {
   font-size: 30px;
   font-weight: bold;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 .container .to-do-list .lists-area {
   width: 100%;
   min-height: 300px;
+}
+.container .to-do-list .lists-area .list {
+  margin: 10px 20px 40px 20px;
+}
+.container .to-do-list .lists-area .list .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .to-do-list .lists-area .list .header .title {
+  display: flex;
+}
+.container .to-do-list .lists-area .list .header .title p {
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: 15px;
+}
+.container .to-do-list .lists-area .list .header .options button {
+  margin-left: 20px;
+}
+.container .to-do-list .lists-area .list .list-progress {
+  height: 20px;
+  margin-top: 10px;
+  display: flex;
+}
+.container .to-do-list .lists-area .list .list-progress p {
+  display: flex;
+  align-items: center;
+}
+.container .to-do-list .lists-area .list .list-progress mat-progress-bar {
+  margin-left: 15px;
+  height: 7px;
+  border-radius: 20px;
+}
+.container .to-do-list .lists-area .list .list-content ul {
+  list-style: none;
+  margin-top: 5px;
+}
+.container .to-do-list .lists-area .list .list-content ul li mat-checkbox.subitem {
+  margin-left: 25px;
 }

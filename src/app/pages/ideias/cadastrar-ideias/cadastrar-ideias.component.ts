@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MatFormFieldControl } from '@angular/material/form-field';
+import { faCheckDouble } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-cadastrar-ideias',
@@ -8,6 +9,7 @@ import { MatFormFieldControl } from '@angular/material/form-field';
   styleUrls: ['./cadastrar-ideias.component.css']
 })
 export class CadastrarIdeiasComponent implements OnInit {
+  check = faCheckDouble;
 
   constructor(
     private route: ActivatedRoute
