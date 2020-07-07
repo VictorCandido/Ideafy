@@ -5,8 +5,9 @@ import { CadastrarIdeiasComponent } from './cadastrar-ideias/cadastrar-ideias.co
 
 
 const routes: Routes = [
-  { path: '', component: CadastrarIdeiasComponent },
-  { path: ':id', component: CadastrarIdeiasComponent }
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: ':id', component: CadastrarIdeiasComponent },
+  { path: 'cadastrar-ideia', component: CadastrarIdeiasComponent },
 ];
 
 @NgModule({
