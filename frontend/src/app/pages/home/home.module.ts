@@ -6,7 +6,6 @@ import { MatButtonModule } from '@angular/material/button';
 
 import { HomeComponent } from './home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { HomeServiceService } from './home-service.service';
 
 @NgModule({
   declarations: [
@@ -22,8 +21,5 @@ import { HomeServiceService } from './home-service.service';
   exports: [
     HomeComponent,
   ],
-  providers: [
-    HomeServiceService
-  ]
 })
 export class HomeModule { }

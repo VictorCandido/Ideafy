@@ -1,3 +1,4 @@
+import { IdeiaService } from './pages/ideias/ideia.service';
 import { IdeiasModule } from './pages/ideias/ideias.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -11,6 +12,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { HomeModule } from './pages/home/home.module';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,15 +21,16 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     AppRoutingModule,
-    FontAwesomeModule,
-    BrowserAnimationsModule,
     HomeModule,
     IdeiasModule,
-    MatToolbarModule
+    FontAwesomeModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
   ],
-  providers: [],
+  providers: [ IdeiaService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -7,7 +7,7 @@ export class IdeiaClasse {
   constructor() { }
 
   public getIdIdea(): number {
-    return this.idea.idIdea;
+    return this.idea._id;
   }
 
   public getTitle(): string {

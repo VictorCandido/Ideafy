@@ -1,8 +1,8 @@
+import { IIdea } from './../../interfaces/IIdea';
+import { IdeiaService } from './../ideias/ideia.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
-import { HomeServiceService } from './home-service.service';
-import { IRegisters } from 'src/app/interfaces/IRegisters';
 
 @Component({
   selector: 'app-home',
@@ -11,15 +11,17 @@ import { IRegisters } from 'src/app/interfaces/IRegisters';
 })
 export class HomeComponent implements OnInit {
   faPlus = faPlus;
-  registers: Array<IRegisters>;
+  ideas: Array<IIdea>;
 
   constructor(
-    private homeService: HomeServiceService,
-    private router: Router
+    private router: Router,
+    private service: IdeiaService
   ) { }
 
   ngOnInit(): void {
-    this.registers = this.homeService.getRegisters();
+    this.service.getAllIdeas().subscribe((ideasArray: IIdea[]) => {
+      this.ideas = ideasArray;
+    });
   }
 
   createNew() {
@@ -27,7 +29,7 @@ export class HomeComponent implements OnInit {
   }
 
   editIdeia(id) {
-    this.router.navigate(['/ideia', id]);
+    this.router.navigate(['/ideia/editar-ideia', id]);
   }
 
 }

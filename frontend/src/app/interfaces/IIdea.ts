@@ -1,9 +1,9 @@
 import { IList } from './IList';
 
 export interface IIdea {
-  idIdea: number;
+  _id?: number;
   title: string;
-  description: string;
-  logo: string;
-  list: Array<IList>;
+  description?: string;
+  logo?: string;
+  list?: Array<IList>;
 }

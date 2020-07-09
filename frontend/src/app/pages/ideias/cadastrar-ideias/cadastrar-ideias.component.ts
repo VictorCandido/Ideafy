@@ -1,7 +1,9 @@
+import { IList } from './../../../interfaces/IList';
+import { IIdea } from './../../../interfaces/IIdea';
+import { IdeiaService } from './../ideia.service';
 import { IdeiaClasse } from './../../../classes/IdeiaClass';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MatFormFieldControl } from '@angular/material/form-field';
 import { faCheckDouble } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -12,20 +14,31 @@ import { faCheckDouble } from '@fortawesome/free-solid-svg-icons';
 export class CadastrarIdeiasComponent implements OnInit {
   check = faCheckDouble;
 
-  idea: IdeiaClasse;
-
-  ideaTitle = 'Teste de título';
-  ideaLogo: string;
-  ideaDescription: string;
-  isEditingTitle = false;
+  idea: IIdea = { title: '' };
+  logo: string;
+  list: IList;
+  isEditingTitle: boolean;
 
   constructor(
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private service: IdeiaService
   ) { }
 
   ngOnInit(): void {
-    this.idea = new IdeiaClasse();
-    console.log(this.route.snapshot.paramMap.get('id'));
+    this.isEditingTitle = false;
+    const id = this.route.snapshot.paramMap.get('id');
+
+    if (id) {
+      this.service.getIdea(id).subscribe((idea: IIdea) => {
+        this.idea = idea;
+        console.log('idea', idea);
+      });
+    } else {
+      this.idea = {
+        description: '',
+        title: 'Insira um título...'
+      }
+    }
   }
 
   editTitle() {
@@ -45,15 +58,6 @@ export class CadastrarIdeiasComponent implements OnInit {
 
   saveTitle() {
     this.isEditingTitle = false;
-    this.idea.setTitle(this.ideaTitle);
-  }
-
-  saveLogo() {
-    this.idea.setLogo(this.ideaLogo);
-  }
-
-  saveDescription() {
-    this.idea.setDescription(this.ideaDescription);
   }
 
 }

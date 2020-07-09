@@ -6,7 +6,7 @@ import { CadastrarIdeiasComponent } from './cadastrar-ideias/cadastrar-ideias.co
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: ':id', component: CadastrarIdeiasComponent },
+  { path: 'editar-ideia/:id', component: CadastrarIdeiasComponent },
   { path: 'cadastrar-ideia', component: CadastrarIdeiasComponent },
 ];
 

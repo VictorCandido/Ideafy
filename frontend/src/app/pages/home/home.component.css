@@ -18,6 +18,7 @@ h1 {
   font-size: 1.4rem;
 }
 .container > .card {
+  min-height: 24rem;
   cursor: pointer;
   margin: 10px 0;
   display: grid;
@@ -58,6 +59,8 @@ h1 {
 }
 .container > .card > .card-body > .logo {
     grid-area: logo;
+    display: flex;
+    justify-content: flex-end;
 }
 .container > .card > .card-body > .logo > img {
     width: 15rem;
