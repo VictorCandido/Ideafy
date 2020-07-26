@@ -1,7 +1,7 @@
 <div class="container">
   <div class="title">
-    <h1 id="title" *ngIf="!isEditingTitle" (dblclick)="editTitle()" >{{ idea.title }}</h1>
-    <input id="editTitle" [(ngModel)]="idea.title" [hidden]="!isEditingTitle" (blur)="saveTitle()" value="Titulo da Ideia"/>
+    <h1 id="title" *ngIf="!isEditingTitle" (dblclick)="editTitle(idea)" >{{ idea.title }}</h1>
+    <input id="editTitle" [(ngModel)]="idea.title" [hidden]="!isEditingTitle" (blur)="saveTitle(idea)" (ngModelChange)="changeIdea(idea)" value="Titulo da Ideia"/>
   </div>
 
   <div class="form">
@@ -12,7 +12,7 @@
     <div class="idea-description">
       <mat-form-field appearance="fill">
         <mat-label>Descrição</mat-label>
-        <textarea [(ngModel)]="idea.description" matInput></textarea>
+        <textarea [(ngModel)]="idea.description" (ngModelChange)="changeIdea(idea)" matInput></textarea>
       </mat-form-field>
     </div>
   </div>
@@ -20,6 +20,7 @@
   <div class="to-do-list">
     <div class="title">
       <h1>TO DO LIST</h1>
+      <button mat-raised-button> Nova Lista </button>
     </div>
 
     <mat-card color="primary" class="lists-area">
@@ -44,11 +45,11 @@
         <div class="list-content">
           <ul>
             <li *ngFor="let item of list.items" >
-              <mat-checkbox color="primary" [checked]="item.completed"> {{ item.title }} </mat-checkbox>
+              <mat-checkbox color="primary" (change)="changeIdea(idea)" [(ngModel)]="item.completed"> {{ item.title }} </mat-checkbox>
 
               <ul *ngIf="item.subitem.length">
                 <li *ngFor="let subitem of item.subitem">
-                  <mat-checkbox class="subitem" color="primary" [checked]="subitem.completed"> {{ subitem.title }} </mat-checkbox>
+                  <mat-checkbox class="subitem" color="primary" (change)="changeIdea(idea)" [(ngModel)]="subitem.completed"> {{ subitem.title }} </mat-checkbox>
                 </li>
               </ul>
             </li>

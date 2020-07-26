@@ -5,6 +5,7 @@ import { IdeiaClasse } from './../../../classes/IdeiaClass';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { faCheckDouble } from '@fortawesome/free-solid-svg-icons';
+import { PathLocationStrategy } from '@angular/common';
 
 @Component({
   selector: 'app-cadastrar-ideias',
@@ -41,7 +42,7 @@ export class CadastrarIdeiasComponent implements OnInit {
     }
   }
 
-  editTitle() {
+  editTitle(idea: IIdea) {
     this.isEditingTitle = true;
 
     setTimeout(() => {
@@ -50,13 +51,20 @@ export class CadastrarIdeiasComponent implements OnInit {
 
       editTitleTxt.addEventListener('keyup', event => {
         if (event.code === 'Enter') {
-          this.saveTitle();
+          this.saveTitle(idea);
         }
       });
     }, 0);
   }
 
-  saveTitle() {
+  changeIdea(idea: IIdea) {
+    console.log('Salvando idea ' + idea._id, idea);
+    this.service.updateIdea(idea).subscribe(res => {
+      console.log(new Date().getTime(), '>> Change Idea', idea, res);
+    });
+  }
+
+  saveTitle(idea: IIdea) {
     this.isEditingTitle = false;
   }
 
